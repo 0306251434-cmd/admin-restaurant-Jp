@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant JP - Bán hàng</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="banhang.css">
+</head>
+
+<body>
+
+    <!-- ================= TOPBAR ================= -->
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <div class="admin-info">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <span>Restaurant JP Admin</span>
+
+            </div>
+
+            <a href="#">Đổi mật khẩu</a>
+
+            <a href="#">Đăng xuất</a>
+
+        </div>
+
+        <div class="top-right">
+
+            <button class="support-btn">
+
+                <i class="fa-solid fa-headset"></i>
+
+                Hỗ trợ ngay
+
+            </button>
+
+            <button class="renew-btn">
+
+                Gia hạn ngay
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="overlay"></div>
+
+            <div class="hero-content">
+
+                <h1>QUẢN LÝ ĐƠN HÀNG</h1>
+
+                <h2>AN TOÀN VÀ THÔNG MINH</h2>
+
+            </div>
+
+        </section>
+
+        <!-- SALES -->
+
+        <section class="sales-layout">
+
+            <!-- MENU -->
+
+            <div class="menu-section">
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" id="searchInput" placeholder="Tìm món ăn..." list="foodSuggestions"
+                        onkeyup="searchFood()">
+
+                    <datalist id="foodSuggestions">
+
+                        <option value="Sushi Cá Hồi">
+                        <option value="Mì Ramen Nhật">
+                        <option value="Tempura Hải Sản">
+                        <option value="Matcha Latte">
+                        <option value="Trà Đào Nhật">
+                        <option value="Mochi Kem">
+                        <option value="Dorayaki">
+
+                    </datalist>
+
+                </div>
+
+                <!-- MENU MÓN ĂN -->
+
+                <h2 class="menu-title">
+                    Menu món ăn
+                </h2>
+
+                <div class="food-grid" id="foodGrid">
+
+                    <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?q=80&w=1200" alt="">
+
+                        <div class="food-info">
+
+                            <h3>Sushi Cao Cấp</h3>
+
+                            <p>240000đ</p>
+
+                            <button onclick="addToCart('Sushi Cao Cấp',240000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://www.agdaily.com/wp-content/uploads/2020/09/bg-japanese-wagyu-beef-001-JJukes.jpg"
+                            alt="">
+
+                        <div class="food-info">
+
+                            <h3>Bò Wagyu</h3>
+
+                            <p>390000đ</p>
+
+                            <button onclick="addToCart('Bò Wagyu',390000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+                    <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://cdn.tgdd.vn/Files/2020/04/13/1248691/tom-su-tempura-ngon-dung-dieu-khong-phai-ai-cung-biet-cach-lam-202202261155222640.jpg"
+                            alt="">
+
+                        <div class="food-info">
+
+                            <h3>Tôm Tempura</h3>
+
+                            <p>180000đ</p>
+
+                            <button onclick="addToCart('Tôm Tempura',180000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+                    <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2024_2_26_638445488465746517_avatar.jpg"
+                            alt="">
+
+                        <div class="food-info">
+
+                            <h3>Cơm Cà Ri Nhật</h3>
+
+                            <p>170000đ</p>
+
+                            <button onclick="addToCart('Cơm Cà Ri Nhật',170000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div> <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://iamsalad.com/wp-content/uploads/2022/12/cac-loai-rau-an-salad-1.jpg"
+                            alt="">
+
+                        <div class="food-info">
+
+                            <h3>Salad Rau Xanh</h3>
+
+                            <p>40000đ</p>
+
+                            <button onclick="addToCart('Salad Rau Xanh',40000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="food-card">
+
+                        <img src="https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-chicken-ramen-mi-ramen-ga-doc-dao-ma-khong-phai-ai-avt-1200x676.jpg"
+                            alt="">
+
+                        <div class="food-info">
+
+                            <h3>Ramen Hải Sản</h3>
+
+                            <p>210000đ</p>
+
+                            <button onclick="addToCart('Ramen Hải Sản',210000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DRINK -->
+
+                    <div class="food-card">
+
+                        <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1200" alt="">
+
+                        <div class="food-info">
+
+                            <h3>Matcha Latte</h3>
+
+                            <p>65000đ</p>
+
+                            <button onclick="addToCart('Matcha Latte',65000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DRINK -->
+
+                    <div class="food-card">
+
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200" alt="">
+
+                        <div class="food-info">
+
+                            <h3>Trà Đào Nhật</h3>
+
+                            <p>50000đ</p>
+
+                            <button onclick="addToCart('Trà Đào Nhật',50000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DESSERT -->
+
+                    <div class="food-card">
+
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200" alt="">
+
+                        <div class="food-info">
+
+                            <h3>Mochi Kem</h3>
+
+                            <p>45000đ</p>
+
+                            <button onclick="addToCart('Mochi Kem',45000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DESSERT -->
+
+                    <div class="food-card">
+
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200" alt="">
+
+                        <div class="food-info">
+
+                            <h3>Dorayaki</h3>
+
+                            <p>40000đ</p>
+
+                            <button onclick="addToCart('Dorayaki',40000)">
+                                Chọn món
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BILL -->
+
+            <aside class="bill-section">
+
+                <div class="bill-header">
+
+                    <h2>Hóa đơn</h2>
+
+                    <span>Bàn 05</span>
+
+                </div>
+
+                <!-- EVENT -->
+
+                <div class="event-box">
+
+                    <i class="fa-solid fa-gift"></i>
+
+                    <div>
+
+                        <h4>Khai trương giảm 10%</h4>
+
+                        <p>Áp dụng cho mọi hóa đơn hôm nay</p>
+
+                    </div>
+
+                </div>
+
+                <!-- CART -->
+
+                <div id="cartItems"></div>
+
+                <!-- EMPTY -->
+
+                <div class="empty-cart" id="emptyCart">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <p>Chưa có món nào được chọn</p>
+
+                </div>
+
+                <!-- TOTAL -->
+
+                <div class="total-box">
+
+                    <div class="total-row">
+
+                        <span>Tổng tiền:</span>
+
+                        <strong id="total">0đ</strong>
+
+                    </div>
+
+                    <div class="total-row">
+
+                        <span>Giảm giá:</span>
+
+                        <strong id="discount">0đ</strong>
+
+                    </div>
+
+                    <div class="total-row grand-total">
+
+                        <span>Thanh toán:</span>
+
+                        <span id="grandTotal">0đ</span>
+
+                    </div>
+
+                </div>
+
+                <!-- STATUS -->
+
+                <div class="status-box" id="statusBox">
+
+                    Sẵn sàng phục vụ 🍣
+                </div>
+
+                <!-- ACTION -->
+
+                <div class="bill-actions">
+
+                    <button class="cancel-btn" onclick="cancelOrder()">
+
+                        Hủy đơn
+
+                    </button>
+
+                    <button class="pay-btn" onclick="payOrder()">
+
+                        Thanh toán
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- ================= BOTTOM ================= -->
+
+    <footer class="bottom-menu">
+
+        <a href="donhang.html">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span>Đơn hàng</span>
+
+        </a>
+
+        <a href="banhang.html" class="active-menu">
+
+            <i class="fa-solid fa-cash-register"></i>
+
+            <span>Bán hàng</span>
+
+        </a>
+
+        <a href="khuvuc.html">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <span>Khu vực</span>
+
+        </a>
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-shop"></i>
+
+            <span>Nhà hàng</span>
+
+        </a>
+
+    </footer>
+
+    <!-- ================= JS ================= -->
+
+    <script>
+
+        let cart = [];
+
+        function addToCart(name, price) {
+
+            const found = cart.find(item => item.name === name);
+
+            if (found) {
+                found.qty++;
+            }
+            else {
+
+                cart.push({
+                    name,
+                    price,
+                    qty: 1
+                });
+
+            }
+
+            renderCart();
+        }
+
+        function removeItem(name) {
+
+            cart = cart.filter(item => item.name !== name);
+
+            renderCart();
+        }
+
+        function renderCart() {
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const emptyCart =
+                document.getElementById("emptyCart");
+
+            cartItems.innerHTML = "";
+
+            let total = 0;
+
+            cart.forEach(item => {
+
+                total += item.price * item.qty;
+
+                cartItems.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div>
+
+                            <h4>${item.name}</h4>
+
+                            <p>
+                                ${(item.price * item.qty).toLocaleString()}đ
+                            </p>
+
+                        </div>
+
+                        <div class="right-cart">
+
+                            <div class="qty">
+                                x${item.qty}
+                            </div>
+
+                            <button class="delete-btn"
+                                onclick="removeItem('${item.name}')">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+            });
+
+            if (cart.length === 0) {
+                emptyCart.style.display = "flex";
+            }
+            else {
+                emptyCart.style.display = "none";
+            }
+
+            let discount = total * 0.1;
+            let grandTotal = total - discount;
+
+            document.getElementById("total").innerText =
+                total.toLocaleString() + "đ";
+
+            document.getElementById("discount").innerText =
+                discount.toLocaleString() + "đ";
+
+            document.getElementById("grandTotal").innerText =
+                grandTotal.toLocaleString() + "đ";
+        }
+
+        function cancelOrder() {
+
+            if (cart.length === 0) {
+
+                showStatus("Không có đơn để hủy ❌", "#ef4444");
+                return;
+            }
+
+            cart = [];
+
+            renderCart();
+
+            showStatus("Hủy đơn thành công ✅", "#ef4444");
+        }
+
+        function payOrder() {
+
+            if (cart.length === 0) {
+
+                showStatus("Vui lòng chọn món 🍜", "#f59e0b");
+                return;
+            }
+
+            cart = [];
+
+            renderCart();
+
+            showStatus("Thanh toán thành công 💳", "#10b981");
+        }
+
+        function showStatus(message, color) {
+
+            const box =
+                document.getElementById("statusBox");
+
+            box.innerText = message;
+
+            box.style.background = color;
+        }
+
+        function searchFood() {
+
+            let input =
+                document.getElementById("searchInput")
+                    .value.toLowerCase();
+
+            let cards =
+                document.querySelectorAll(".food-card");
+
+            cards.forEach(card => {
+
+                let name =
+                    card.querySelector("h3")
+                        .innerText.toLowerCase();
+
+                if (name.includes(input)) {
+                    card.style.display = "block";
+                }
+                else {
+                    card.style.display = "none";
+                }
+
+            });
+
+        }
+
+        renderCart();
+
+    </script>
+
+</body>
+
+</html>
